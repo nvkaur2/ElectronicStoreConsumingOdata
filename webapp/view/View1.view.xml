@@ -5,7 +5,7 @@
 		</headerContent>
 		<subHeader>
 			<Toolbar>
-				<SearchField search="onSearch" showRefreshButton="true"/>
+				<SearchField id="idSearch" search="onSearch" showRefreshButton="true"/>
 			</Toolbar>
 		</subHeader>
 		<content>
@@ -23,6 +23,7 @@
 			<Toolbar>
 			    <content>
 			        <Button xmlns="sap.m" text="Print" id="button1" icon="sap-icon://print" press="onPrintFind"/>
+			        <Button xmlns="sap.m" text="SingleRead" id="button1_1574187585953" press="onSingleRead" icon="sap-icon://show"/>
 			    </content>
 			</Toolbar>
 		</footer>
