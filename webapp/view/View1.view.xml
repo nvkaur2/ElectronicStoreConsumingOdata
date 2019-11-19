@@ -1,0 +1,30 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="sap.dev.order.controller.View1">
+	<Page title="">
+		<headerContent>
+			<Button icon="sap-icon://action" press="onNext"/>
+		</headerContent>
+		<subHeader>
+			<Toolbar>
+				<SearchField search="onSearch" showRefreshButton="true"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List id="myList" mode="SingleSelectMaster" growingThreshold="10" growing="true" delete="onDelete" items="{/ProductSet}" selectionChange="onItemPress" rememberSelections="true">
+				<items>
+					<ObjectListItem type="Navigation" title="{ProductID}" intro="{Category}" number="{Price}" numberUnit="{CurrencyCode}">
+						<firstStatus>
+							<ObjectStatus state="Success" text="Available"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+			    <content>
+			        <Button xmlns="sap.m" text="Print" id="button1" icon="sap-icon://print" press="onPrintFind"/>
+			    </content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

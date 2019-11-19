@@ -1,0 +1,27 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.dev.order.controller.View2"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:b="sap.dev.order.controls" xmlns:c="sap.dev.order.controls">
+	<Page title="" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<ObjectHeader title="{Name}"  intro="{Description}" number="{Price}" numberUnit="{CurrencyCode}"></ObjectHeader>
+			<IconTabBar>
+				<items>
+					<IconTabFilter key="idMore" text="More Details" icon="sap-icon://display-more">
+						<core:Fragment type="XML" fragmentName="sap.dev.order.fragments.simple"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter key="idSupp" text="Suppliers" icon="sap-icon://supplier">
+						<core:Fragment type="XML" fragmentName="sap.dev.order.fragments.table"></core:Fragment>
+					</IconTabFilter>
+				
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="Save" type="Accept" press="onSave"></Button>
+				<Button text="Cancel" type="Reject" press="onCancel" ></Button>
+			
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

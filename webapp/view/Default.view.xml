@@ -1,0 +1,8 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.dev.order.controller.Default"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="sap.dev.order.controls">
+	<Page title="" >
+		<content>
+			<c:MyHeading text="Welcome to Online Electronics Store!" color="IndianRed"/>
+		</content>
+	</Page>
+</mvc:View>
