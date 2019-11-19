@@ -39,7 +39,7 @@ sap.ui.define([
 		},
 		onSearch: function (oEvent) {
 			var sQuery = oEvent.getParameter("query");
-			var oFilter = new Filter("Category", FilterOperator.Contains, sQuery);
+			var oFilter = new Filter("ProductID", FilterOperator.Contains, sQuery);
 			var oList = this.getView().byId("myList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(oFilter);
@@ -78,22 +78,79 @@ sap.ui.define([
 		/**
 		 *@memberOf sap.dev.order.controller.View1
 		 */
-		 
 		oProdPopup: null,
 		onPrintFind: function (oEvent) {
-			if(!this.oProdPopup){
+			if (!this.oProdPopup) {
 				this.oProdPopup = new sap.ui.xmlfragment("sap.dev.order.fragments.popup");
 				this.getView().addDependent(this.oProdPopup);
 				this.oProdPopup.bindAggregation("items", {
-					path:"/ProductSet",
-					filters:  new Filter("Category", FilterOperator.Contains, "Printer"),
+					path: "/ProductSet",
+					filters: new Filter("ProductID", FilterOperator.Contains, "Printer"),
 					template: new sap.m.DisplayListItem({
-						label : "{Name}",
+						label: "{Name}",
 						value: "{Category}"
 					})
-				})
+				});
 			}
 			this.oProdPopup.open();
+		},
+		/**
+		 *@memberOf sap.dev.order.controller.View1
+		 */
+		oDialog:  null,
+		onSingleRead: function (oEvent) {
+			var val = this.getView().byId("idSearch").getValue();
+			var oModel = this.getView().getModel();
+			var that = this;
+			oModel.read("/ProductSet('" + val + "')", {
+				success: function (res) {
+					that.oDialog = new sap.m.Dialog({
+						title: 'Product detail',
+						content: [new sap.ui.layout.form.SimpleForm({
+							content: [
+								new sap.m.Label({
+									text: "Name"
+								}),
+								new sap.m.Input({
+									value: res.Name
+								}),
+								new sap.m.Label({
+									text: "Category"
+								}),
+								new sap.m.Input({
+									value: res.Category
+								}),
+								new sap.m.Label({
+									text: "Price"
+								}),
+								new sap.m.Input({
+									value: res.Price
+								}),
+								new sap.m.Label({
+									text: "Currency"
+								}),
+								new sap.m.Input({
+									value: res.CurrencyCode
+								})
+
+							]
+						}),
+						],
+						endButton: new sap.m.Button({
+						text: 'Close',
+						press: function () {
+							that.oDialog.close();
+						}
+					})
+					});
+				that.oDialog.open();
+				},
+
+				error: function (err) {
+					sap.m.MessageBox.error(JSON.parse(err.responseText).error.message.value,{title: "Error"})
+				
+				}
+			});
 		}
 	});
 });
