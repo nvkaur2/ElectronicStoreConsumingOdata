@@ -5,12 +5,12 @@
 			<ObjectHeader title="{Name}"  intro="{Description}" number="{Price}" numberUnit="{CurrencyCode}"></ObjectHeader>
 			<IconTabBar>
 				<items>
-					<IconTabFilter key="idMore" text="More Details" icon="sap-icon://display-more">
-						<core:Fragment type="XML" fragmentName="sap.dev.order.fragments.simple"></core:Fragment>
+					<IconTabFilter key="idMore" text="Supplier" icon="sap-icon://supplier">
+						<core:Fragment id="myData" type="XML" fragmentName="sap.dev.order.fragments.simple"></core:Fragment>
 					</IconTabFilter>
-					<IconTabFilter key="idSupp" text="Suppliers" icon="sap-icon://supplier">
-						<core:Fragment type="XML" fragmentName="sap.dev.order.fragments.table"></core:Fragment>
-					</IconTabFilter>
+					<!--<IconTabFilter key="idSupp" text="Suppliers" icon="sap-icon://supplier">-->
+					<!--	<core:Fragment type="XML" fragmentName="sap.dev.order.fragments.table"></core:Fragment>-->
+					<!--</IconTabFilter>-->
 				
 				</items>
 			</IconTabBar>

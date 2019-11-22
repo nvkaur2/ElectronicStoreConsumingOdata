@@ -111,6 +111,12 @@ sap.ui.define([
 						title: 'Product detail',
 						content: [new sap.ui.layout.form.SimpleForm({
 							content: [
+									new sap.m.Label({
+									text: "Product ID"
+								}),
+								new sap.m.Input({
+									value: res.ProductID
+								}),
 								new sap.m.Label({
 									text: "Name"
 								}),

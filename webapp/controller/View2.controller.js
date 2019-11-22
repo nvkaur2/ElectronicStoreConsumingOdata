@@ -23,6 +23,8 @@ sap.ui.define([
 		turakmakto: function (oEvent) {
 			var sPath = "/" + oEvent.getParameter("arguments").pid;
 			this.getView().bindElement(sPath);
+			var oFormObj= this.getView().getContent()[0].getContent()[1].getItems()[0].getContent()[0];
+			oFormObj.bindElement("ToSupplier")
 		},
 		onClick: function (oEvent) {
 			oEvent.getSource().addStyleClass("abc");

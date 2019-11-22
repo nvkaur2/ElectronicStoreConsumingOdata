@@ -61,20 +61,45 @@ sap.ui.define([
 			}
 
 		},
-		
-		onDelete: function(){
+
+		onDelete: function () {
 			var oModel = this.getView().getModel("viewModel");
 			var payload = oModel.getProperty("/");
-			
-				var oDataModel = this.getView().getModel();
-				oDataModel.remove("/ProductSet('" + payload.ProductID +"')", {
-					success: function(){
-						messageBox.success("Deleted");
-					},
-					error: function(){
-						messageBox.error("Error occured")
-					}
-				})
+
+			var oDataModel = this.getView().getModel();
+			oDataModel.remove("/ProductSet('" + payload.ProductID + "')", {
+				success: function () {
+					messageBox.success("Deleted");
+				},
+				error: function () {
+					messageBox.error("Error occured")
+				}
+			})
+		},
+		fieldId: "",
+		oSuppliersPopup: null,
+
+		onF4: function (oEvent) {
+			this.fieldId = oEvent.getSource().getId();
+			if (!this.oSuppliersPopup) {
+				this.oSuppliersPopup = new sap.ui.xmlfragment("sap.dev.order.fragments.popup");
+				this.getView().addDependent(this.oSuppliersPopup);
+				this.oSuppliersPopup.setMultiSelect(false);
+				this.oSuppliersPopup.bindAggregation("items", {
+					path: "/BusinessPartnerSet",
+					template: new sap.m.StandardListItem({
+						icon: "sap-icon://home",
+						title: "{BusinessPartnerID}",
+						description: "{CompanyName}"
+					})
+				});
+				this.oSuppliersPopup.attachConfirm(this.onConfirm, this);
+			}
+			this.oSuppliersPopup.open();
+		},
+
+		onConfirm: function (oEvent) {
+			this.fielId.setValue(oEvent.getParameter("selectedItem").getLabel());
 		},
 
 		onSave: function () {

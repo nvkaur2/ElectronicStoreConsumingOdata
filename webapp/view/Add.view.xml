@@ -16,6 +16,12 @@
 								<l:GridData span="L4"/>
 							</layoutData>
 						</Input>
+						<Label text="Supplier ID"/>
+							<Input value="{viewModel>/BusinessPartnerID}" showValueHelp="true" valueHelpRequest="onF4">
+							<layoutData>
+								<l:GridData span="XL1 L2 M2 S4"/>
+							</layoutData>
+						</Input>
 						<Label text="Price"/>
 						<Input value="{viewModel>/Price}">
 							<layoutData>

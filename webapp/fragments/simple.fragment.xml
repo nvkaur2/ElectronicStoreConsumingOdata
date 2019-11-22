@@ -1,14 +1,14 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">>
 	<f:SimpleForm >
 		<f:content>
-			<Label text="Weight Measure"></Label>
-			<Text text="{WeightMeasure}"></Text>
-			<Label text="Weight Unit"></Label>
-			<Text text="{WeightUnit}"></Text>
-			<Label text="Width"></Label>
-			<Text text="{Width}"></Text>
-			<Label text="Height"></Label>
-			<Text text="{Height}"></Text>
+			<Label text="Supplier ID"></Label>
+			<Text text="{BusinessPartnerID}"></Text>
+			<Label text="Company Name"></Label>
+			<Text text="{CompanyName}"></Text>
+			<Label text="Web Address"></Label>
+			<Text text="{WebAddress}"></Text>
+			<Label text="Phone Number"></Label>
+			<Text text="{PhoneNumber}"></Text>
 		</f:content>
 	</f:SimpleForm>
 </core:FragmentDefinition>
