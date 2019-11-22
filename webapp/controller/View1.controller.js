@@ -31,6 +31,9 @@ sap.ui.define([
 				pid: fruitId
 			});
 		},
+		onAdd: function(){
+			this.oRouter.navTo("add");
+		},
 		onDelete: function (oEvent) {
 			var oView = this.getView().byId("myList");
 			// var oView= oEvent.getSource();
@@ -85,7 +88,7 @@ sap.ui.define([
 				this.getView().addDependent(this.oProdPopup);
 				this.oProdPopup.bindAggregation("items", {
 					path: "/ProductSet",
-					filters: new Filter("ProductID", FilterOperator.Contains, "Printer"),
+					filters: new Filter("Category", FilterOperator.Contains, "Printer"),
 					template: new sap.m.DisplayListItem({
 						label: "{Name}",
 						value: "{Category}"
@@ -147,7 +150,7 @@ sap.ui.define([
 				},
 
 				error: function (err) {
-					sap.m.MessageBox.error(JSON.parse(err.responseText).error.message.value,{title: "Error"})
+					sap.m.MessageBox.error(JSON.parse(err.responseText).error.message.value,{title: "Error"});
 				
 				}
 			});

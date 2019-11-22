@@ -24,6 +24,7 @@
 			    <content>
 			        <Button xmlns="sap.m" text="Print" id="button1" icon="sap-icon://print" press="onPrintFind"/>
 			        <Button xmlns="sap.m" text="SingleRead" id="button1_1574187585953" press="onSingleRead" icon="sap-icon://show"/>
+			        <Button press="onAdd" icon="sap-icon://add" tooltip="Add products"/>
 			    </content>
 			</Toolbar>
 		</footer>

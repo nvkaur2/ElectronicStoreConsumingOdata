@@ -20,7 +20,6 @@
 				<ToolbarSpacer></ToolbarSpacer>
 				<Button text="Save" type="Accept" press="onSave"></Button>
 				<Button text="Cancel" type="Reject" press="onCancel" ></Button>
-			
 			</Toolbar>
 		</footer>
 	</Page>

@@ -9,9 +9,7 @@
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"tags": {
-			"keywords": [
-				"{{keyword1}}"
-			]
+			"keywords": ["{{keyword1}}"]
 		},
 		"dataSources": {
 			"GWSAMPLE_BASIC": {
@@ -48,12 +46,10 @@
 			"cozy": false
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/mystyle.css",
-					"id": ""
-				}
-			]
+			"css": [{
+				"uri": "css/mystyle.css",
+				"id": ""
+			}]
 		},
 		"rootView": {
 			"viewName": "sap.dev.order.view.App",
@@ -67,24 +63,19 @@
 				"viewType": "XML",
 				"controlId": "myApp"
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "navdeep",
-					"target": [
-						"donald",
-						"trump"
-					]
-				},
-				{
-					"pattern": "productDetail/{pid}",
-					"name": "kaur",
-					"target": [
-						"donald",
-						"modi"
-					]
-				}
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "navdeep",
+				"target": ["donald", "trump"]
+			}, {
+				"pattern": "productDetail/{pid}",
+				"name": "kaur",
+				"target": ["donald", "modi"]
+			}, {
+				"name": "add",
+				"pattern": "addProduct",
+				"target": ["add", "donald"]
+			}],
 			"targets": {
 				"donald": {
 					"viewName": "View1",
@@ -100,6 +91,14 @@
 					"viewName": "View2",
 					"controlAggregation": "detailPages",
 					"viewID": "idView2"
+				},
+				"add": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Add",
+					"controlAggregation": "detailPages",
+					"viewId": ""
 				}
 			}
 		},
@@ -119,10 +118,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_bluecrystal",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_bluecrystal", "sap_belize"]
 	},
 	"_version": "1.9.0"
 }

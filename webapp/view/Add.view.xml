@@ -1,0 +1,46 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.dev.order.controller.Add"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Page title="Manage Products" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Add product" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						<Label text="Product ID"/>
+						<Input id="name" value="{viewModel>/ProductID}"/>
+						<Label text="Product Name"/>
+						<Input value="{viewModel>/Name}"></Input>
+						<Input value="{viewModel>/Description}" placeholder="Description">
+							<layoutData>
+								<l:GridData span="L4"/>
+							</layoutData>
+						</Input>
+						<Label text="Price"/>
+						<Input value="{viewModel>/Price}">
+							<layoutData>
+								<l:GridData span="XL1 L2 M2 S4"/>
+							</layoutData>
+						</Input>
+						<Input value="{viewModel>/CurrencyCode}"  placeholder="Currency"/>
+						<Button text="Save" type="Accept" press="onSave"></Button>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="idForm" editable="true" layout="ResponsiveGridLayout" title="Delete product" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<Label text="Product ID"></Label>
+					<Input id="deleteId" fieldWidth="2em"></Input>
+					<Button text="Delete" type="Reject" press="onDelete"></Button>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
